@@ -1,0 +1,171 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/*zeramos a margem no eixo X e Y do body*/
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body *{
+    box-sizing: border-box;
+}
+
+/*vw = viewport 1vw = 1% (10px) 100vw = 1000px do tamanho da largura de sua viewport (tela)*/
+/*vh = viewport 1vh= 1% (10px) 100vh = 1000px do tamanho do comprimento de sua viewport (tela)*/
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    display: flex; /*display flex com que as coisas fiquem lado a lado*/
+    justify-content: center; /*justify content centraliza as coisas no eixo x*/
+    align-items: center; /*align items centraliza as coisas no eixo y*/
+}
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex; /*display flex com que as coisas fiquem lado a lado*/
+    justify-content: center; /*justify content centraliza as coisas no eixo x*/
+    align-items: center; /*align items centraliza as coisas no eixo y*/
+    flex-direction: column; /* serve para colocar um item embaixo do outro mesmo usando flex*/ 
+}
+
+.left-login > h1{
+    color: #77ffc0;
+    font-size: 3vw;
+}
+
+.left-login-image{
+    width: 20vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex; /*display flex com que as coisas fiquem lado a lado*/
+    justify-content: center; /*justify content centraliza as coisas no eixo x*/
+    align-items: center; /*align items centraliza as coisas no eixo y*/
+}
+
+.card-login{
+    width:60%; /* ao utilizar % ela pega o tamanho da div onde a div que esta sendo utilizada esta*/
+    display: flex; /*display flex com que as coisas fiquem lado a lado*/
+    justify-content: center; /*justify content centraliza as coisas no eixo x*/
+    align-items: center; /*align items centraliza as coisas no eixo y*/
+    flex-direction: column; /* serve para colocar um item embaixo do outro mesmo usando flex*/
+    padding: 30px /*eixo X*/ 35px /*eixo Y*/; /*margin dentro do componente*/
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px  #00000056;
+}
+
+.card-login > h1{
+color: #00ff88;
+font-weight: 800;
+margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px  #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label{
+    color:#f0ffffde;
+    margin-bottom: 10px; /*margem para baixo*/
+}
+
+.textfield > input:placeholder{
+    color: #f0ffff94;
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background:#00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+.btn-cadastro{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background:#00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+@media only screen and (max-width: 950px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .main-login{
+       flex-direction: column;
+    }
+    .left-login > h1{
+        display: none;
+    }
+    .left-login{
+        width:100%;
+        height: auto;
+    }
+    .right-login{
+        width:100%;
+        height: auto;
+    }
+    .left-login-image{
+        width:35vw;
+        margin-bottom: 10px;
+    }
+    .card-login{
+        width: 90%;
+    }
+
+    /* alertLogin */
+#alertLogin {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    margin-top: 2vh;
+    animation: 1s ease alertLoginAnimation;
+  }
+}
